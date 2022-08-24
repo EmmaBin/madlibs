@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block game %}Game Choice{% endblock %}
+
+{% block body %}
+
+  <form action="/madlib">
+      Name a person
+      <input type="text" name="person">
+      Name a color
+      <input type="text" name="color">
+      Name a noun
+      <input type="text" name="noun">
+      Name an adjective
+      <input type="text" name="adjective">
+
+
+ </form>
+{% endblock %}
