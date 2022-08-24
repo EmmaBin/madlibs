@@ -43,7 +43,6 @@ def say_hello():
 @app.route("/greet")
 def greet_person():
     """Greet user with compliment."""
-    print("***************in the greet route***********")
     player = request.args.get("person")
 
     compliment = choice(AWESOMENESS)
@@ -52,16 +51,14 @@ def greet_person():
 
 @app.route("/game")
 def show_madlib_form():
-    print("*"*20, "in show_madlib_form")
     game_answer = request.args.get("game")
     if game_answer =="yes":
         return render_template("game.html",game=game_answer )
     else:
-        return "WHoops"
+        return render_template("goodbye.html",game=game_answer )
 
-@app.route("/game")
+@app.route("/madlib")
 def show_madlib():
-    print("*"*20, "in show_madlib")
     person = request.args.get("person")
     color = request.args.get("color")
     noun = request.args.get("noun")
